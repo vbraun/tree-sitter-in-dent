@@ -1,8 +1,9 @@
 from tree_sitter import Parser
-from dent.languages import PY_LANGUAGE
+
+from dent.lang_py.language import LANGUAGE
 
 parser = Parser()
-parser.set_language(PY_LANGUAGE)
+parser.set_language(LANGUAGE)
 
 src = bytes("""
 def foo():
@@ -10,7 +11,9 @@ def foo():
         baz()
 """, "utf8")
 
-def read_callable(byte_offset, point):
-    return src[byte_offset:byte_offset+1]
 
-tree = parser.parse(read_callable)
+def read_callable(byte_offset: int, point: bytes) -> bytes:
+    return src[byte_offset:byte_offset + 1]
+
+
+tree = parser.parse(read_callable)  # type: ignore

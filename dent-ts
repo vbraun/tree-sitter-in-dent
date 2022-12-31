@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+./tools/bin/python -m dent.cmdline "$@"

@@ -1,2 +1,7 @@
 tree-sitter
+types-tree-sitter
 ipython
+mypy
+flake8
+pytest
+isort
